@@ -27,7 +27,8 @@
     <x-banner />
 
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-        @livewire('navigation-menu')
+        {{-- @livewire('navigation-menu') --}}
+        @livewire('navigation')
 
 
         <!-- Page Content -->
@@ -40,5 +41,12 @@
 
     @livewireScripts
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (session('swal'))
+    <script>
+        Swal.fire({!! json_encode(session('swal')) !!})
+    </script>
+@endif
 
 </html>

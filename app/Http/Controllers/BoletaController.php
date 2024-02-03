@@ -43,9 +43,27 @@ class BoletaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Boleta $Boleta)
+    public function show(Boleta $boleta)
     {
-        //
+        // Accede directamente a la relación y obtén los resultados
+        $boleta->envios;
+
+        // Devuelve la respuesta en formato JSON
+        return response()->json(['boleta' => $boleta]);
+    }
+    public function valida(Request $request)
+    {
+        $boleta = Boleta::where('codigo', $request->boleta)->first();
+        if ($boleta) {
+            if ($request->codigo == $boleta->dni)
+                return redirect()->route('boletas.show', $boleta);
+        }
+        session()->flash('swal', [
+            'icon' => 'error',
+            'title' => '¡Ups!',
+            'text' => 'El código ingresado no coincide con el DNI',
+        ]);
+        return redirect()->route('welcome');
     }
 
     /**
