@@ -55,9 +55,44 @@
                             <td class="px-6 py-4">
                                 {{ $envio->direccion }} </td>
                             <td class="px-6 py-4">
-                                {{ $envio->tipo }} </td>
-                            <td class="px-6 py-4">
-                                {{ $envio->estado }} </td>
+                                @switch($envio->tipo)
+                                        @case(1)
+                                            Carga en General
+                                            @break
+                                        @case(2)
+                                            Paquetería y Encomienda
+                                            @break
+                                        @case(3)
+                                            Almacenaje
+                                            @break
+                                        @case(4)
+                                            Carga Especializada
+                                            @break
+                                        
+                                        @default
+                                            Estado Desconocido
+                                    @endswitch </td>
+                             <td class="px-6 py-4">
+                                    @switch($envio->estado)
+                                        @case(1)
+                                            Pedido Confirmado
+                                            @break
+                                        @case(2)
+                                            En proceso
+                                            @break
+                                        @case(3)
+                                            En ruta
+                                            @break
+                                        @case(4)
+                                            En proceso de entrega
+                                            @break
+                                        @case(5)
+                                            Entregado
+                                            @break
+                                        @default
+                                            Estado Desconocido
+                                    @endswitch
+                                </td>
 
                             <td class="px-6 py-4">
                                 <a href="{{ route('admin.envios.edit', $envio) }}"

@@ -4,9 +4,9 @@
 
         <div class="flex min-h-full flex-col justify-center items-center px-6 py-12 lg:px-8">
             <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-                <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                <img class="mx-auto h-20 w-auto" src="{{ asset('storage/imagenes/favicon.png') }}"
                     alt="Your Company">
-                <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Seguir tu envio
+                <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Seguir tu Envío
                 </h2>
             </div>
 
@@ -33,7 +33,7 @@
 
                     <div>
                         <button type="submit"
-                            class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Encontrar
+                            class="flex w-full justify-center rounded-md bg-secundario px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-principal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Encontrar
                             Envio</button>
                     </div>
                 </form>

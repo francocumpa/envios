@@ -56,7 +56,7 @@ class BoletaController extends Controller
         $boleta = Boleta::where('codigo', $request->boleta)->first();
         if ($boleta) {
             if ($request->codigo == $boleta->dni)
-                return redirect()->route('boletas.show', $boleta);
+                return view('boletas.show', compact('boleta'));
         }
         session()->flash('swal', [
             'icon' => 'error',
@@ -64,6 +64,12 @@ class BoletaController extends Controller
             'text' => 'El código ingresado no coincide con el DNI',
         ]);
         return redirect()->route('welcome');
+    }
+    public function mostrar($id)
+    {
+        $boleta = Boleta::findOrFail($id);
+
+        return view('boletas.show', ['boleta' => $boleta]);
     }
 
     /**

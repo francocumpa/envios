@@ -41,14 +41,43 @@
             <div class="mb-4">
                 <x-label class="mb-2">Tipo envio</x-label>
 
-                <x-input class="w-full" type="number" placeholder="Ingrese el nombre de la familia" name="tipo"
-                    value="{{ old('tipo') }}"></x-input>
+                <x-select name="tipo" class="w-full">
+                    <option value="1" @if(old('tipo') == '1' ) selected @endif>
+                        Carga En general
+                    </option>
+                    <option value="2" @if(old('tipo') == '2' ) selected @endif>
+                        Paquetería y Encomienda
+                    </option>
+                    <option value="3" @if(old('tipo') == '3' ) selected @endif>
+                        Almacenaje
+                    </option>
+                    <option value="4" @if(old('tipo') == '4' ) selected @endif>
+                        Carga Especializada
+                    </option>
+                    
+                </x-select>
             </div>
             <div class="mb-4">
                 <x-label class="mb-2">Estado</x-label>
-
-                <x-input class="w-full" type="number" placeholder="Ingrese el nombre de la familia" name="estado"
-                    value="{{ old('estado') }}"></x-input>
+                    <x-select name="estado" class="w-full">
+                        <option value="1" @if(old('estado') == '1' ) selected @endif>
+                            Pedido Confirmado
+                        </option>
+                        <option value="2" @if(old('estado') == '2' ) selected @endif>
+                            En proceso
+                        </option>
+                        <option value="3" @if(old('estado') == '3' ) selected @endif>
+                            En ruta
+                        </option>
+                        <option value="4" @if(old('estado') == '4' ) selected @endif>
+                            En proceso de entrega
+                        </option>
+                        <option value="5" @if(old('estado') == '5' || $envio->estado == '5') selected @endif>
+                            Entregado
+                        </option>
+                    </x-select>
+                
+                
             </div>
 
             <div class="flex justify-end">

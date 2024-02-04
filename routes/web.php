@@ -29,3 +29,4 @@ Route::middleware([
 });
 Route::get('/valida', [BoletaController::class, 'valida'])->name('boletas.valida');
 Route::resource('boletas', BoletaController::class);
+

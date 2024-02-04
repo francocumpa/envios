@@ -1,19 +1,18 @@
 <div x-data="{
     open: false,
 }">
-    <header class="bg-purple-600">
+    <header class="bg-principal">
         <x-container class="px-4 py-4">
             <div class="flex justify-between items-center space-x-8">
                 <button class="text-2xl md:text-3xl" x-on:click="open=true">
 
                     <i class="fas fa-bars text-white"></i>
                 </button>
-                <h1 class="text-white">
-                    <a href="/" class="inline-flex flex-col items-end">
-                        <span class="text-2xl md:text-3xl leading-4 md:leading-6 font-semibold">EnviosDirecto</span>
-                        <span class="text-xs">Seguimiento Online</span>
-                    </a>
-                </h1>
+                
+                <a href="/" class="inline-flex flex-col items-center">
+                    <img src="{{ asset('storage/imagenes/logo-blanco.png') }}" alt="" style="width:60%;height:60%" >
+                </a>
+                
 
                 <div class="flex items-center space-x-8">
                     <x-dropdown>
